@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"name": "Overview",
+			"path": "."
+		},
+		{
+			"name": "Inkplate Client",
+			"path": "client"
+		},
+		{
+			"name": "Inkplate Server",
+			"path": "server"
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"ical",
+			"Inkplate",
+			"openmeteo",
+			"Prio"
+		],
+		"files.associations": {
+			"*.tcc": "cpp",
+			"fstream": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"array": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"chrono": "cpp"
+		},
+		"files.exclude": {
+			"**/node_modules/**": true
+        },
+        "search.exclude": {
+            "**/dist/**": true,
+			"**/node_modules/**": true
+        },
+	}
+}

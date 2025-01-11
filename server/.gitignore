@@ -1,0 +1,6 @@
+node_modules/
+dist
+.nyc_output/
+coverage/
+src/config.ts
+src/layout/images/

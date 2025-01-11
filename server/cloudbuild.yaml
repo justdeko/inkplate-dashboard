@@ -1,0 +1,27 @@
+substitutions:
+  _RUNTIME: nodejs18
+  _SERVICE_NAME: hello-world
+  _REGION: australia-southeast1
+  _ENTRY_POINT: helloWorld
+
+steps:
+  - name: node
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        npm install && npm test && npm run build
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - ${_SERVICE_NAME}
+      - --gen2
+      - --runtime=${_RUNTIME}
+      - --trigger-http
+      - --allow-unauthenticated
+      - --region=${_REGION}
+      - --entry-point=${_ENTRY_POINT}
+      - --memory=128Mi
