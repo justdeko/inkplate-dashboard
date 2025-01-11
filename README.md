@@ -1,8 +1,8 @@
 # Inkplate Dashboard
 
-![inkplate dashboard](images/header.jpeg)
-
 This is dashboard that displays the weather, news, your calendar events and other useful information all at a glance. It uses the Inkplate 10 as a hardware client and provides the dashboard via a google cloud function.
+
+![inkplate dashboard](images/header.jpeg)
 
 # Table of Contents
 
