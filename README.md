@@ -73,7 +73,7 @@ After you turn on your inkplate dashboard, I recommend you get familiar with its
 
 ### Building the dashboard into the picture frame (optional)
 
-If you want to, you can just skip this step and put the inkplate in the frame you bought it with, build it into whatever you want. If you want the "framed image" look, follow these steps:
+If you want to, you can just skip this step and put the inkplate in the frame you bought it with, or just build it into whatever you want. If you want the "framed image" look, follow these steps:
 
 1. Glue the battery to the back of the inkplate 10. Either use double sided sticky tape or glue.
 2. Glue the inkplate 10 to the back side of the passepartout, with the display inside the frame on the other side. Make sure to align the borders properly, I recommend doing this step with the dashboard already displayed on the inkplate, because it makes easier to align. You can also deviate from my contraption and use something more structurally sound instead of just some sticky tape.
@@ -85,7 +85,7 @@ If you want to, you can just skip this step and put the inkplate in the frame yo
   <img src="images/inside-frame.jpeg" width="49%" />
   <img src="images/inside-frame-with-supporting.jpeg" width="49%">
 </p>
-6. put the backboard into the picture frame and make sure everything is fixed and stable and you're done!
+6. Put the backboard into the picture frame and make sure everything is fixed and stable and you're done!
 
 ![backboard](images/backboard.jpeg)
 
@@ -95,17 +95,17 @@ The dashboard has two modes, dashboard mode and gallery mode. The latter is for 
 
 ### Gallery mode
 
-To enable gallery mode, you need to set `MODE: gallery` in the `.env.yaml` or the deployed cloud function `MODE` parameter. Make sure to put your images in the `server/dist/layout/images` path first.
+To enable gallery mode, you need to set `MODE: gallery` in the `.env.yaml` or the deployed cloud function `MODE` parameter. Make sure to put your images in the `server/src/layout/images` path first.
 
 ### Public transport
 
 This dashboard currently only supports public transport for Berlin (BVG). To get started with the required stop IDs, [check out this page](https://v6.bvg.transport.rest/getting-started.html). 
 
-If you want to use it for a different city, eel free to implement or customize using an endpoint for your local region.
+If you want to use it for a different city, you can customize `transportDepartures.ts` using an endpoint for your local region.
 
 ### RSS Feeds
 
-Be aware that the current implementation only supports images through embedding with an `<img>` tag in the `content:encoded` property. Not all RSS feeds do this, so your feed might display without images. Feel free to adapt the implementation in `news.ts`.
+Be aware that the current implementation only supports images through embedding with an `<img>` tag in the `content:encoded` property. Not all RSS feeds do this, so your feed might display without images. You can adapt the implementation in `news.ts`.
 
 ### Custom Content
 
@@ -128,12 +128,14 @@ The implementation automatically resizes the window frame to fit the side pane a
 
 ### Other configuration options
 
-Feel free to explore `config.ts` and `config.h` to configure one of these things:
+`config.ts` and `config.h` allow you to configure:
 
 - refresh intervals
 - reduced refresh hours
 - battery voltage indicator levels
 - whether to display the sunrise and sunset times inlined into the weather row
+
+and more!
 
 ## Related Projects and used Dependencies
 
