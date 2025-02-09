@@ -11,8 +11,9 @@ This is a dashboard that displays the weather, news, your calendar events and ot
 3. [Requirements](#requirements)
 4. [Setup](#setup)
 5. [Usage](#usage)
-6. [Related Projects and used Dependencies](#related-projects-and-used-dependencies)
-7. [Contributing](#contributing)
+6. [Battery Life](#battery-life)
+7. [Related Projects and used Dependencies](#related-projects-and-used-dependencies)
+8. [Contributing](#contributing)
 
 ## Features
 
