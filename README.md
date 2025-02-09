@@ -137,6 +137,12 @@ The implementation automatically resizes the window frame to fit the side pane a
 
 and more!
 
+## Battery Life
+
+<img src="images/voltage.png" height="300" />
+
+With the default configuration (refresh interval of 40 minutes and 120 minutes at night), a 4000mAh 3.7V battery lasts 4 months without recharging. Depending on your interval and battery size, this can vary.
+
 ## Related Projects and used Dependencies
 
 ### Inspiration

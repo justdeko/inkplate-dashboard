@@ -45,4 +45,4 @@ export const newsFeedUrl = "https://some-rss-feed.com/rss.xml";
  */
 export const BATTERY_HIGH = 3.8
 export const BATTERY_MID = 3.6
-export const BATTERY_LOW = 3.25
+export const BATTERY_LOW = 3.5
