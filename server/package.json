@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "rm -r dist/layout && cp -r src/layout dist/layout && npx tsc-watch --onSuccess 'npx @google-cloud/functions-framework --target=render'",
-    "deploy": "gcloud functions deploy inkplate-dashboard-gen --gen2 --runtime=nodejs18 --trigger-http --memory=512MB --allow-unauthenticated --entry-point=render --env-vars-file .env.yaml",
+    "deploy": "gcloud functions deploy inkplate-dashboard-gen --gen2 --runtime=nodejs22 --trigger-http --memory=512MB --allow-unauthenticated --entry-point=render --env-vars-file .env.yaml",
     "build": "rm -r dist/layout && cp -r src/layout dist/layout && npx tsc",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' nyc --reporter=lcov mocha -r ts-node/register 'tests/**/*.ts'"
   },
