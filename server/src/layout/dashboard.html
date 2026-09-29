@@ -256,8 +256,28 @@
       transform: translate(+15%, +500%);
     }
 
+    .news {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
     .news-header {
       font-size: 30px;
+    }
+
+    .news-image {
+      flex: 1;
+      min-height: 0;
+      margin-top: 10px;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top center;
+      filter: grayscale(100%);
     }
 
     .news-item {

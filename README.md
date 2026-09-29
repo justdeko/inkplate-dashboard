@@ -105,7 +105,25 @@ This dashboard currently only supports public transport for Berlin (BVG). To get
 
 If you want to use it for a different city, you can customize `transportDepartures.ts` using an endpoint for your local region.
 
-### RSS Feeds
+### News
+
+By default, the news box displays the items of an RSS feed. You can also display a single image or items from a JSON API instead. To do so, adapt `newsSource` in `config.ts`:
+
+```
+export const newsSource = {
+    mode: "image",
+    // the feed, image or api url
+    url: "https://sample.url/news.png",
+    // api only: the path to the item list and the item fields
+    itemsPath: "items",
+    titleField: "title",
+    imageField: "imageUrl",
+};
+```
+
+In `image` mode, the image is scaled to fit the news box (about 370 x 430 px). In `api` mode, the first 4 items are displayed like RSS items, e.g. set `itemsPath` to `data.stories` for a response like `{ "data": { "stories": [...] } }`.
+
+#### RSS Feeds
 
 Be aware that the current implementation only supports images through embedding with an `<img>` tag in the `content:encoded` property. Not all RSS feeds do this, so your feed might display without images. You can adapt the implementation in `news.ts`.
 
