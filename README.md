@@ -105,26 +105,27 @@ This dashboard currently only supports public transport for Berlin (BVG). To get
 
 If you want to use it for a different city, you can customize `transportDepartures.ts` using an endpoint for your local region.
 
-### RSS Feeds
+### News
 
-Be aware that the current implementation only supports images through embedding with an `<img>` tag in the `content:encoded` property. Not all RSS feeds do this, so your feed might display without images. You can adapt the implementation in `news.ts`.
-
-### News box: image or JSON API instead of RSS
-
-The news box can also show a single image or items from a JSON API. Set `mode` and `url` in `newsSource` in `config.ts`:
+By default, the news box displays the items of an RSS feed. You can also display a single image or items from a JSON API instead. To do so, adapt `newsSource` in `config.ts`:
 
 ```
 export const newsSource = {
-    mode: "image", // "rss", "image" or "api"
+    mode: "image",
+    // the feed, image or api url
     url: "https://sample.url/news.png",
-    // api only: the list in the response (dot separated, empty for the root) and the fields of one item
+    // api only: the path to the item list and the item fields
     itemsPath: "items",
     titleField: "title",
     imageField: "imageUrl",
 };
 ```
 
-`image` shows the url scaled to fit the news box (about 370 x 430 px) in grayscale. `api` renders a response like `{ "items": [{ "title": "...", "imageUrl": "..." }] }` as the same list as the RSS mode (the first 4 items); point `itemsPath` at a nested list with dots, for example `data.stories`, and leave `imageField` empty for a text-only list. Images are fetched while rendering, so they have to be reachable from the cloud function without authentication.
+In `image` mode, the image is scaled to fit the news box (about 370 x 430 px). In `api` mode, the first 4 items are displayed like RSS items, e.g. set `itemsPath` to `data.stories` for a response like `{ "data": { "stories": [...] } }`.
+
+#### RSS Feeds
+
+Be aware that the current implementation only supports images through embedding with an `<img>` tag in the `content:encoded` property. Not all RSS feeds do this, so your feed might display without images. You can adapt the implementation in `news.ts`.
 
 ### Custom Content
 
